@@ -1,0 +1,194 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.app-header {
+  text-align: center;
+  max-width: 650px;
+}
+
+.badge-wrapper {
+  margin-bottom: 0.75rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.main-description code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  color: #38bdf8;
+  font-family: monospace;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  width: 100%;
+}
+
+/* Card Styling */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card.card-liked {
+  border-color: var(--border-card-liked);
+  box-shadow: var(--shadow-liked);
+  background: linear-gradient(180deg, #1e293b 0%, rgba(239, 68, 68, 0.05) 100%);
+}
+
+.card-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.status-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  transition: var(--transition-fast);
+}
+
+.pill-unliked {
+  background: rgba(100, 116, 139, 0.2);
+  color: var(--badge-unliked);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.pill-liked {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--badge-liked);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.card-icon {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.card-actions {
+  margin-top: auto;
+}
+
+.btn-like {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--accent-neutral);
+  color: var(--text-primary);
+}
+
+.btn-like:hover {
+  background: var(--accent-neutral-hover);
+}
+
+.btn-like.btn-active {
+  background: var(--accent-like);
+  border-color: var(--accent-like);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.btn-like.btn-active:hover {
+  background: var(--accent-like-hover);
+}
+
+.heart-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.btn-like:hover .heart-icon {
+  transform: scale(1.15);
+}
+
+.btn-like:active .heart-icon {
+  transform: scale(0.95);
+}
+
+.app-footer {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 1.9rem;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
